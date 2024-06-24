@@ -1,5 +1,6 @@
 import { useState, useCallback } from "react";
 import { Box, Button, Container, FormControl, FormLabel, Heading, Input, VStack, Text, Select, SimpleGrid } from "@chakra-ui/react";
+import { LoadScript } from "@react-google-maps/api";
 import { useNavigate } from "react-router-dom";
 
 const TripPlanner = () => {
@@ -23,6 +24,8 @@ const TripPlanner = () => {
     console.log("Planning trip from", start, "to", destination, "by", mode);
     navigate("/trip-details");
   };
+
+  const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
   return (
     <Container centerContent>
@@ -52,7 +55,7 @@ const TripPlanner = () => {
             style={{ border: 0 }}
             loading="lazy"
             allowFullScreen
-            src="https://www.google.com/maps/embed/v1/directions?origin=place_id:ChIJf8Oj-FRtVkYRZiz0UCkLLqQ&destination=place_id:ChIJHX3kplsSVkYRQHjkQfP-AAQ&key=YOUR_API_KEY"
+            src={`https://www.google.com/maps/embed/v1/directions?origin=place_id:ChIJf8Oj-FRtVkYRZiz0UCkLLqQ&destination=place_id:ChIJHX3kplsSVkYRQHjkQfP-AAQ&key=${apiKey}`}
           ></iframe>
           <iframe
             width="100%"
@@ -60,7 +63,7 @@ const TripPlanner = () => {
             style={{ border: 0 }}
             loading="lazy"
             allowFullScreen
-            src="https://www.google.com/maps/embed/v1/directions?origin=place_id:ChIJf8Oj-FRtVkYRZiz0UCkLLqQ&destination=place_id:ChIJHX3kplsSVkYRQHjkQfP-AAQ&key=YOUR_API_KEY"
+            src={`https://www.google.com/maps/embed/v1/directions?origin=place_id:ChIJf8Oj-FRtVkYRZiz0UCkLLqQ&destination=place_id:ChIJHX3kplsSVkYRQHjkQfP-AAQ&key=${apiKey}`}
           ></iframe>
         </SimpleGrid>
       </VStack>
