@@ -3,8 +3,8 @@ import { FaBus, FaBicycle, FaCar } from "react-icons/fa";
 
 const Index = () => {
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-      <VStack spacing={4}>
+    <Container centerContent maxW="container.md" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
+      <VStack spacing={4} mt={16}>
         <Heading as="h1" size="2xl" mb={4}>Mobility as a Service</Heading>
         <Text fontSize="lg" textAlign="center">Your one-stop solution for all urban mobility needs. Choose your preferred mode of transport and get going!</Text>
         <Box display="flex" justifyContent="space-around" width="100%" mt={8}>

@@ -12,7 +12,7 @@ const Profile = () => {
 
   return (
     <Container centerContent>
-      <VStack spacing={4} mt={8}>
+      <VStack spacing={4} mt={16}>
         <Heading as="h1" size="xl">User Profile</Heading>
         <Text>Email: user@example.com</Text>
         <Text>Payment Methods: **** **** **** 1234</Text>

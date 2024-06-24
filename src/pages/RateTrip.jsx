@@ -15,7 +15,7 @@ const RateTrip = () => {
 
   return (
     <Container centerContent>
-      <VStack spacing={4} mt={8}>
+      <VStack spacing={4} mt={16}>
         <Heading as="h1" size="xl">Rate Trip</Heading>
         <FormControl id="rating">
           <FormLabel>Rating (1-5)</FormLabel>

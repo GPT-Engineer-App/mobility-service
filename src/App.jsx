@@ -1,4 +1,5 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar.jsx";
 import Index from "./pages/Index.jsx";
 import Login from "./pages/Login.jsx";
 import SignUp from "./pages/SignUp.jsx";
@@ -12,6 +13,7 @@ import RateTrip from "./pages/RateTrip.jsx";
 function App() {
   return (
     <Router>
+      <Navbar />
       <Routes>
         <Route exact path="/" element={<Index />} />
         <Route path="/login" element={<Login />} />
