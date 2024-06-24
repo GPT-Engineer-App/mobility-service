@@ -51,21 +51,15 @@ const TripPlanner = () => {
         <Button colorScheme="teal" onClick={handlePlanTrip}>Plan Trip</Button>
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4} mt={8} width="100%">
           <iframe
-            width="100%"
+            width="600"
             height="450"
             style={{ border: 0 }}
             loading="lazy"
             allowFullScreen
-            src={`https://www.google.com/maps/embed/v1/directions?origin=place_id:ChIJf8Oj-FRtVkYRZiz0UCkLLqQ&destination=place_id:ChIJHX3kplsSVkYRQHjkQfP-AAQ&key=${apiKey}`}
-          ></iframe>
-          <iframe
-            width="100%"
-            height="450"
-            style={{ border: 0 }}
-            loading="lazy"
-            allowFullScreen
-            src={`https://www.google.com/maps/embed/v1/directions?origin=place_id:ChIJf8Oj-FRtVkYRZiz0UCkLLqQ&destination=place_id:ChIJHX3kplsSVkYRQHjkQfP-AAQ&key=${apiKey}`}
-          ></iframe>
+            referrerPolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDLspPreZIlDHoK6D0BDInsLTNBio_QzOA
+              &q=Space+Needle,Seattle+WA">
+          </iframe>
         </SimpleGrid>
       </VStack>
     </Container>
