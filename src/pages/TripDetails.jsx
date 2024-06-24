@@ -12,7 +12,7 @@ const TripDetails = () => {
 
   return (
     <Container centerContent>
-      <VStack spacing={4} mt={8}>
+      <VStack spacing={4} mt={16}>
         <Heading as="h1" size="xl">Trip Details</Heading>
         <Text>Start: Example Start</Text>
         <Text>Destination: Example Destination</Text>

@@ -15,7 +15,7 @@ const Login = () => {
 
   return (
     <Container centerContent>
-      <VStack spacing={4} mt={8}>
+      <VStack spacing={4} mt={16}>
         <Heading as="h1" size="xl">Login</Heading>
         <FormControl id="email">
           <FormLabel>Email address</FormLabel>

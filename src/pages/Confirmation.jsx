@@ -12,7 +12,7 @@ const Confirmation = () => {
 
   return (
     <Container centerContent>
-      <VStack spacing={4} mt={8}>
+      <VStack spacing={4} mt={16}>
         <Heading as="h1" size="xl">Confirmation</Heading>
         <Text>Your trip has been booked successfully!</Text>
         <Button colorScheme="teal" onClick={handleRateTrip}>Rate Trip</Button>
