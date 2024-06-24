@@ -1,8 +1,17 @@
 import { useState, useCallback } from "react";
-const apiKey = "YOUR_HARDCODED_API_KEY";
-import { Box, Button, Container, FormControl, FormLabel, Heading, Input, VStack, Text, Select, SimpleGrid } from "@chakra-ui/react";
-import { LoadScript } from "@react-google-maps/api";
+import { Box, Button, Container, FormControl, FormLabel, Heading, Input, VStack, Text, Select } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
+import { GoogleMap, LoadScript, Marker, TrafficLayer } from "@react-google-maps/api";
+
+const containerStyle = {
+  width: '100%',
+  height: '400px'
+};
+
+const center = {
+  lat: -3.745,
+  lng: -38.523
+};
 
 const TripPlanner = () => {
   const [start, setStart] = useState("");
@@ -26,8 +35,6 @@ const TripPlanner = () => {
     navigate("/trip-details");
   };
 
-  console.log("Google Maps API Key:", apiKey);
-
   return (
     <Container centerContent>
       <VStack spacing={4} mt={16}>
@@ -49,18 +56,20 @@ const TripPlanner = () => {
           </Select>
         </FormControl>
         <Button colorScheme="teal" onClick={handlePlanTrip}>Plan Trip</Button>
-        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4} mt={8} width="100%">
-          <iframe
-            width="600"
-            height="450"
-            style={{ border: 0 }}
-            loading="lazy"
-            allowFullScreen
-            referrerPolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDLspPreZIlDHoK6D0BDInsLTNBio_QzOA
-              &q=Space+Needle,Seattle+WA">
-          </iframe>
-        </SimpleGrid>
+        <Box mt={8} width="100%">
+          <LoadScript googleMapsApiKey="AIzaSyDLspPreZIlDHoK6D0BDInsLTNBio_QzOA">
+            <GoogleMap
+              mapContainerStyle={containerStyle}
+              center={center}
+              zoom={10}
+              onClick={handleMapClick}
+            >
+              {startMarker && <Marker position={startMarker} />}
+              {endMarker && <Marker position={endMarker} />}
+              <TrafficLayer />
+            </GoogleMap>
+          </LoadScript>
+        </Box>
       </VStack>
     </Container>
   );
