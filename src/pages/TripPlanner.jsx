@@ -57,7 +57,7 @@ const TripPlanner = () => {
         </FormControl>
         <Button colorScheme="teal" onClick={handlePlanTrip}>Plan Trip</Button>
         <Box mt={8} width="100%">
-          <LoadScript googleMapsApiKey="YOUR_GOOGLE_MAPS_API_KEY">
+          <LoadScript googleMapsApiKey="AIzaSyDLspPreZIlDHoK6D0BDInsLTNBio_QzOA">
             <GoogleMap
               mapContainerStyle={containerStyle}
               center={center}
