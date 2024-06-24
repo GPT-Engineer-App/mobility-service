@@ -1,5 +1,5 @@
 import { useState, useCallback } from "react";
-const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+const apiKey = "YOUR_HARDCODED_API_KEY";
 import { Box, Button, Container, FormControl, FormLabel, Heading, Input, VStack, Text, Select, SimpleGrid } from "@chakra-ui/react";
 import { LoadScript } from "@react-google-maps/api";
 import { useNavigate } from "react-router-dom";
@@ -26,7 +26,6 @@ const TripPlanner = () => {
     navigate("/trip-details");
   };
 
-  const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY || "YOUR_FALLBACK_API_KEY";
   console.log("Google Maps API Key:", apiKey);
 
   return (
